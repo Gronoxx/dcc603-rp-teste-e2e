@@ -75,7 +75,7 @@ it('Remove a tarefa se o texto da edição for apagado', () => {
   cy.get('[data-cy=todo-input]').type('Tarefa a ser removida{enter}');
 
   cy.get('[data-cy=todos-list] > li label').dblclick();
-  cy.get('li.editing .edit').clear().type('{enter}'); // Apaga o texto e aperta Enter
+  cy.get('li.editing .edit').clear().type('{enter}'); 
 
   cy.get('[data-cy=todos-list]').children().should('have.length', 0);
 });
@@ -83,7 +83,7 @@ it('Remove a tarefa se o texto da edição for apagado', () => {
 it('Limpa as tarefas completadas', () => {
   cy.visit('');
   cy.get('[data-cy=todo-input]').type('Tarefa 1{enter}').type('Tarefa 2{enter}');
-  cy.get('[data-cy=todos-list] li .toggle').first().click(); // Completa a primeira
+  cy.get('[data-cy=todos-list] li .toggle').first().click(); 
 
   cy.get('.clear-completed').click();
 
